@@ -1,5 +1,8 @@
 import pandas as pd
+import sys
 
-df = pd.read_csv("name_extraction.csv")
+input_file = sys.argv[1]
+
+df = pd.read_csv(input_file)
 df.drop(columns=["index", "advice"], inplace=True, errors='ignore')
 df.to_csv("data/cleaned_file.csv", index=False)
