@@ -18,10 +18,10 @@ install:
 	. .venv/bin/activate && pip install -r requirements.txt
 
 up:
-	docker compose up -d
+	docker-compose up -d
 
 down:
-	docker compose down
+	docker-compose down
 
 logs:
 	docker logs -f bigdata-mysql
