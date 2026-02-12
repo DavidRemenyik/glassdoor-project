@@ -212,3 +212,4 @@ outputs/
 *.csv
 .DS_Store
 .ipynb_checkpoints/
+archive.zip
