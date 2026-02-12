@@ -40,8 +40,20 @@ make up
 source .venv/bin/activate
 
 ```
+### 8. Docker container
+```bash
+docker ps
+```
 
+### 9. MySQL
+```bash
+mysql -h 127.0.0.1 -u biguser -pbigpw glassdoor
+```
 
+```mysql
+SHOW DATABASES;
+EXIT;
+```
 ## 2. Daily Use
 ### 1. Start MySQL Docker container
 ```bash
