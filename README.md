@@ -47,12 +47,32 @@ docker ps
 
 ### 9. MySQL
 ```bash
-mysql -h 127.0.0.1 -u biguser -pbigpw glassdoor
+mysql --local-infile=1 -h 127.0.0.1 -u root -prootpw
 ```
 
 ```mysql
 SHOW DATABASES;
 EXIT;
+```
+
+### 9. Adding a table
+```mysql
+use glassdoor;
+
+CREATE TABLE users (
+    id INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    age INT,
+    city VARCHAR(50)
+);
+
+LOAD DATA LOCAL INFILE 'raw/testingCSV.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
 ```
 ## 2. Daily Use
 ### 1. Start MySQL Docker container
