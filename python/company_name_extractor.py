@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("datasets/all_reviews.csv")
+df = pd.read_csv("all_reviews.csv")
 
 def extract_company(url):  
     marker = "Reviews/"
