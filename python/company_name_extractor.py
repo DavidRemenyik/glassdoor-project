@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("data/all_reviews.csv")
+df = pd.read_csv("datasets/all_reviews.csv")
 
 def extract_company(url):  
     marker = "Reviews/"
@@ -12,4 +12,4 @@ def extract_company(url):
     return url[start:end]
 
 df["company"] = df["firm_link"].apply(extract_company)
-df.to_csv("data/name_extraction.csv", index=False)
+df.to_csv("name_extraction.csv", index=False)
