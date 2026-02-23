@@ -17,17 +17,17 @@ input_file = sys.argv[1] if len(sys.argv) > 1 else "../dataset2-final.csv"
 # 2. Define Schema (No headers in CSV)
 schema = StructType([
     StructField("firm", StringType(), True),
-    StructField("date_review", StringType(), True),
+    StructField("date_review", StringType(), True), 
     StructField("job_title", StringType(), True),
     StructField("current", StringType(), True),
     StructField("location", StringType(), True),
-    StructField("overall_rating", IntegerType(), True),
-    StructField("work_life_balance", IntegerType(), True),
-    StructField("culture_values", IntegerType(), True),
-    StructField("career_opp", IntegerType(), True),
-    StructField("comp_benefits", IntegerType(), True),
-    StructField("senior_mgmt", IntegerType(), True),
-    StructField("recommend", FloatType(), True),
+    StructField("overall_rating", FloatType(), True),      # Matched to FLOAT
+    StructField("work_life_balance", FloatType(), True),   # Changed to FloatType
+    StructField("culture_values", FloatType(), True),      # Changed to FloatType
+    StructField("career_opp", FloatType(), True),          # Changed to FloatType
+    StructField("comp_benefits", FloatType(), True),       # Changed to FloatType
+    StructField("senior_mgmt", FloatType(), True),         # Changed to FloatType
+    StructField("recommend", StringType(), True),          # Changed to StringType to match VARCHAR(20)
     StructField("ceo_approv", StringType(), True),
     StructField("outlook", StringType(), True),
     StructField("headline", StringType(), True),
@@ -36,7 +36,13 @@ schema = StructType([
 ])
 
 # 3. Load Data
-df = spark.read.csv(input_file, schema=schema, header=False)
+df = spark.read.csv(input_file, schema=schema,
+    header=False,          # We know final.csv has no headers
+    multiLine=True,        # Prevents newlines in reviews from shifting columns
+    quote='"',             # Keeps commas inside reviews from breaking columns
+    escape='"',
+    #mode="DROPMALFORMED"   # Safely ignores completely broken rows)
+)
 
 # 4. Define Categories
 categories = {
