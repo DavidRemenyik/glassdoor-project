@@ -32,7 +32,7 @@ schema = StructType([
     StructField("pros", StringType(), True),
     StructField("cons", StringType(), True)
 ])
-
+"""
 # 3. Load Data (Make sure this points to your file)
 df = spark.read.csv(input_file, schema=schema,
     header=False,          # We know final.csv has no headers
@@ -41,6 +41,10 @@ df = spark.read.csv(input_file, schema=schema,
     escape='"',
     #mode="DROPMALFORMED"   # Safely ignores completely broken rows)
 )
+"""
+# 2 & 3. Load Data from Parquet (Schema is baked in, so no need to define it!)
+df = spark.read.parquet("../mergedFinal.parquet")
+
 
 # 4. Filter out NULL values (The 'WHERE' equivalent)
 filtered_df = df.filter(
