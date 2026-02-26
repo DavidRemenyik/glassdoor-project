@@ -58,7 +58,7 @@ result = filtered_df.groupBy("firm").agg(
         (F.col("work_life_balance") * 1.1197) +
         (F.col("culture_values")    * 1.4247) +
         (F.col("career_opp")        * -0.0129 + F.col("career_opp")) +
-        (F.col("comp_benefits")     * 0.2584) +
+        (F.col("comp_benefits")     * 1.2584) +
         (F.col("senior_mgmt")       * -0.3348 + F.col("senior_mgmt")))
     /5).alias("weighted_rating") 
 )
