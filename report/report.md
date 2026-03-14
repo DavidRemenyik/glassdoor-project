@@ -26,7 +26,7 @@ Our team, **Fat Data Dudes**, set out to move beyond simple "star ratings." We w
 Before any analysis, we had to solve the "Comma Problem." Because employee "Pros" and "Cons" often contain commas, a standard `split(',')` would break the schema.
 1.  **Ingestion:** Data was downloaded via Kaggle API and unzipped.
 2.  **Cleaning Pipeline:** We developed `python/clean-commas.py` to handle quoted strings and escape sequences.
-3.  **Name Extraction:** Using `python/company_name_extractor.py`, we normalized firm names (e.g., merging "Amazon.com" and "Amazon") to ensure aggregation accuracy.
+3.  **Name Extraction:** Using `python/company_name_extractor.py`, we normalized firm names since one dataset used a link the company reviews, and the other simply the company name (eg. Amazon and Reviews/Amazon-Reviews-E5462645.htm) to ensure accurate results.
 4.  **Column Reordering:** We used `python/reorder_columns.py` to ensure the schema was consistent across both datasets before merging into `mergedFinal.csv`.
 
 ---
