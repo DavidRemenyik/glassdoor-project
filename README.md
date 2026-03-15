@@ -30,8 +30,8 @@ glassdoor-project/
 └── screenshots/                            # Assets for README and Report
 └── SQLvsSparkOrderByNewWeights.png
 
-![Comparison of SQL vs Spark Order By Weights](https://github.com/DavidRemenyik/glassdoor-project/blob/main/screenshots/SQLvsSparkOrderByNewWeightsFlowChart.png)
-
+![Comparison of SQL vs Spark Order By Weights](screenshots/SQLvsSparkOrderByNewWeightsFlowChar.png)
+<img src="./screenshots/SQLvsSparkOrderByNewWeightsFlowChart.png" alt="Comparison of SQL vs Spark Order By Weights">
 ## 1. FIRST TIME Setup
 ### 1. Install system dependencies (Ubuntu)
 ```bash
