@@ -1,6 +1,37 @@
 # glassdoor-project
 Fat Data Dudes
 
+
+<pre><code>```text
+glassdoor-project/
+├── .gitignore                              # Ignores /data, pycache, and .venv
+├── Data_Processing_and_SQL_Baseline.ipynb  # Section 2: Baseline & Cleaning
+├── Makefile                                # Automated execution commands
+├── README.md                               # Project documentation & architecture
+├── docker-compose.yml                      # MySQL environment setup
+├── requirements.txt                        # Python dependencies
+├── python/                                 # Data cleaning & schema alignment
+│   ├── calculate-weights.py
+│   ├── clean-commas.py
+│   ├── company_name_extractor.py
+│   ├── drop_columns.py
+│   ├── rename_columns.py
+│   └── reorder_columns.py
+├── spark/                                  # Big Data MapReduce Optimizations
+│   ├── rdd-query-spark.py                  # Final Section 3 (Optimized RDD Core)
+│   ├── rdd-parquet-spark.py                # Serialization tax experiment
+│   ├── sql-query-spark.py                  # DataFrame baseline experiment
+│   ├── WeightedRating.scala                # JVM native logic formulation
+│   ├── rdd-query-spark-all-core.py         # CPU core scaling experiment
+│   ├── csv_to_parquet.py                   # Utility to convert raw CSVs to Parquet
+│   └── GlassdoorAnalysis.scala             # High-throughput JVM-native processing (25s)
+├── report/                                 # Academic submission
+│   └── report.md
+└── screenshots/                            # Assets for README and Report
+└── SQLvsSparkOrderByNewWeights.png
+
+![Comparison of SQL vs Spark Order By Weights](https://github.com/DavidRemenyik/glassdoor-project/blob/main/screenshots/SQLvsSparkOrderByNewWeightsFlowChart.png)
+
 ## 1. FIRST TIME Setup
 ### 1. Install system dependencies (Ubuntu)
 ```bash
