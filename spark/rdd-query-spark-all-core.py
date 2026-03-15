@@ -105,7 +105,7 @@ def main():
         print(f"| {display_firm:<28} | {count:<12} | {avg_rating:<18.15f} |")
         
     print(f"+{'-'*30}+{'-'*14}+{'-'*20}+\n")
-
+    input("🛑 Paused! Open http://localhost:4040 in your browser. Press Enter here to close...")
     sc.stop()
 
 if __name__ == "__main__":
